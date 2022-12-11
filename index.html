@@ -24,7 +24,6 @@
 			animate();
 
 			function init() {
-
 				const container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
@@ -37,19 +36,21 @@
 				controls = new OrbitControls( camera, container );
 				controls.target.set( 0, 1.6, 0 );
 				controls.update();
+				
+				const grid1= new THREE.GridHelper(1,5,0xffffff,0xffffff);
+        			grid1.rotation.x=0;grid1.position.y=1.5;grid1.position.z=-2;scene.add(grid1);
 
         			const gridHelper = new THREE.GridHelper(10,5,0xffffff,0xffffff);scene.add(gridHelper);
 				const pg = new THREE.PlaneGeometry( 10, 10 );
 				const pm = new THREE.MeshBasicMaterial( {color: 0x808080, side: THREE.DoubleSide} );
-        			const plane = new THREE.Mesh( pg, pm);plane.rotation.x =-Math.PI/2;
+        			const plane = new THREE.Mesh(pg, pm);plane.rotation.x =-Math.PI/2;
         			scene.add( plane );
-				
 				scene.add( new THREE.HemisphereLight( 0x888877, 0x777788 ) );
 
 				const light = new THREE.DirectionalLight( 0xffffff, 0.5 );
 				light.position.set( 0, 4, 0 );
 				scene.add( light );
-
+				
 				//
 				const painter1 = new TubePainter();
 				scene.add( painter1.mesh );
