@@ -136,7 +136,7 @@
 				controllerGrip2.add( controllerModelFactory.createControllerModel( controllerGrip2 ) );
 				scene.add( controllerGrip2 );
 				
-				const geo = new THREE.BufferGeometry().setFromPoints( [ new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, - 1 )]);
+				const geo = new THREE.BufferGeometry().setFromPoints( [ new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, 0 )]);
 				const line = new THREE.Line( geo );
 				line.name = 'line';
 				line.scale.z = 5;
@@ -167,7 +167,6 @@
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 				renderer.setSize( window.innerWidth, window.innerHeight );
-
 			}
 			//
 			function handleController( controller ) {
