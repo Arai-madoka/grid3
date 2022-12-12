@@ -41,7 +41,7 @@
 				//group = new THREE.Group();
 				//scene.add( group );
 				
-				let g=new THREE.MeshBasicMaterial({color:0xffffff});
+				let g=new THREE.MeshBasicMaterial({color:0xc0c0c0});
 				for(let i=0;i<6;i++){
 					for(let j=1;j<2;j+=0.2){
 						let grid1 =new THREE.GridHelper(1,5,g,g);
@@ -81,7 +81,7 @@
 				const painter2 = new TubePainter();
 				scene.add( painter2.mesh );
 				//
-				renderer = new THREE.WebGLRenderer( { antialias: true , alpha: true} );
+				renderer = new THREE.WebGLRenderer( { antialias: true} );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				renderer.outputEncoding = THREE.sRGBEncoding;
