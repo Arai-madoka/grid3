@@ -11,13 +11,15 @@
 			import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
 			import { TubePainter } from 'https://unpkg.com/three@0.126.1/examples/jsm/misc/TubePainter.js';
 			import { VRButton } from 'https://unpkg.com/three@0.126.1/examples/jsm/webxr/VRButton.js';
+			import { XRControllerModelFactory } from 'https://unpkg.com/three@0.126.1/examples/jsm/webxr/XRControllerModelFactory.js';
 
 			let camera, scene, renderer;
 			let controller1, controller2;
+			let controllerGrip1, controllerGrip2;
 
 			const cursor = new THREE.Vector3();
 
-			let controls;
+			let controls,group;
 
 			init();
 			animate();
@@ -35,6 +37,9 @@
 				controls = new OrbitControls( camera, container );
 				controls.target.set( 0, 1.6, 0 );
 				controls.update();
+				
+				//group = new THREE.Group();
+				//scene.add( group );
 				
 				const grid1= new THREE.GridHelper(1,5,0xffffff,0xffffff);
         			grid1.rotation.x=0;grid1.position.y=1.5;grid1.position.z=-2;scene.add(grid1);
