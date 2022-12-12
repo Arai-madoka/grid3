@@ -55,7 +55,7 @@
 					for(let n=-0.5;n<0.7;n+=0.2){
 						let grid2 =new THREE.GridHelper(1,5,g,g);
 						grid2.name='grid';
-						grid2.myid=k;
+						grid2.myid=i;
 						grid2.rotation.x=Math.PI/2;
 						grid2.position.y=1.5;
 						grid2.position.z=n;
@@ -98,17 +98,11 @@
 					this.userData.isSqueezing = true;
 					this.userData.positionAtSqueezeStart = this.position.y;
 					this.userData.scaleAtSqueezeStart = this.scale.x;
-
- 					//grid1.visible = false;
- 					//grid2.visible = false;
 					}
 					
 				}
 				function onSqueezeEnd() {
 					this.userData.isSqueezing = false;
-					
- 					//grid1.visible = true;
- 					//grid2.visible = true;
 					}
 				}				
 
