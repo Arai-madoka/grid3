@@ -16,7 +16,7 @@
 			let camera, scene, renderer;
 			let controller1, controller2;
 			let controllerGrip1, controllerGrip2;
-			
+
 			const cursor = new THREE.Vector3();
 
 			let controls,group;
@@ -51,7 +51,8 @@
 						grid1.position.y=j;
 						grid1.position.z=0;
 						scene.add(grid1);	
-					}
+					}	
+					
 				}
 				for(let k=0;k<6;k++){
 					for(let n=-0.5;n<0.7;n+=0.2){
@@ -100,12 +101,9 @@
 					this.userData.isSqueezing = true;
 					this.userData.positionAtSqueezeStart = this.position.y;
 					this.userData.scaleAtSqueezeStart = this.scale.x;
-					}
-					
 				}
 				function onSqueezeEnd() {
 					this.userData.isSqueezing = false;
-					}
 				}				
 
 				controller1 = renderer.xr.getController( 0 );
