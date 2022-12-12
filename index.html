@@ -19,6 +19,9 @@
 
 			const cursor = new THREE.Vector3();
 
+			let raycaster;
+			const intersected = [];
+			const tempMatrix = new THREE.Matrix4();
 			let controls,group;
 
 			init();
@@ -132,6 +135,14 @@
 				controllerGrip2 = renderer.xr.getControllerGrip(1);
 				controllerGrip2.add( controllerModelFactory.createControllerModel( controllerGrip2 ) );
 				scene.add( controllerGrip2 );
+				
+				const geo = new THREE.BufferGeometry().setFromPoints( [ new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, - 1 )]);
+				const line = new THREE.Line( geo );
+				line.name = 'line';
+				line.scale.z = 5;
+				controller2.add( line.clone() );
+
+				raycaster = new THREE.Raycaster();
 
 				//
 				const geometry = new THREE.CylinderGeometry( 0.01, 0.02, 0.08, 5 );
