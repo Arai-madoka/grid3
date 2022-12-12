@@ -100,13 +100,13 @@
 					this.userData.isSqueezing = true;
 					this.userData.positionAtSqueezeStart = this.position.y;
 					this.userData.scaleAtSqueezeStart = this.scale.x;
-					this.grid1.visible=false;
-					this.grid2.visible=false;
+					grid1.visible=false;
+					grid2.visible=false;
 				}
 				function onSqueezeEnd() {
 					this.userData.isSqueezing = false;
-					this.grid1.visible=true;
-					this.grid2.visible=true;
+					grid1.visible=true;
+					grid2.visible=true;
 				}				
 
 				controller1 = renderer.xr.getController( 0 );
